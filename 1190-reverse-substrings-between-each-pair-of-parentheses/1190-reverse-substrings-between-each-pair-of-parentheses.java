@@ -3,7 +3,7 @@ class Solution
     public String reverseParentheses(String s) 
     {
         int n = s.length();
-        Stack<Integer> openParenthesesIndices = new Stack<>();
+        Deque<Integer> openParenthesesIndices = new ArrayDeque<>();
         int[] pair = new int[n];
 
         // First pass: Pair up parentheses
@@ -13,7 +13,7 @@ class Solution
             {
                 openParenthesesIndices.push(i);
             }
-            if (s.charAt(i) == ')')
+           else if (s.charAt(i) == ')')
             {
                 int j = openParenthesesIndices.pop();
                 pair[i] = j;
