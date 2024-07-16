@@ -15,72 +15,62 @@
  */
 class Solution {
 
-    public String getDirections(TreeNode root, int startValue, int destValue) 
-    {
-        // Find the Lowest Common Ancestor (LCA) of start and destination nodes
-        TreeNode lowestCommonAncestor = findLowestCommonAncestor(root, startValue,destValue);
+    public String getDirections(TreeNode root, int startValue, int destValue) {
+        StringBuilder startPath = new StringBuilder();
+        StringBuilder destPath = new StringBuilder();
 
-        StringBuilder pathToStart = new StringBuilder();
-        StringBuilder pathToDest = new StringBuilder();
-
-        // Find paths from LCA to start and destination nodes
-        findPath(lowestCommonAncestor, startValue, pathToStart);
-        findPath(lowestCommonAncestor, destValue, pathToDest);
+        // Find paths from root to start and destination nodes
+        findPath(root, startValue, startPath);
+        findPath(root, destValue, destPath);
 
         StringBuilder directions = new StringBuilder();
+        int commonPathLength = 0;
 
-        // Add "U" for each step to go up from start to LCA
-        directions.append("U".repeat(pathToStart.length()));
+        // Find the length of the common path
+        while (
+            commonPathLength < startPath.length() &&
+            commonPathLength < destPath.length() &&
+            startPath.charAt(commonPathLength) ==
+            destPath.charAt(commonPathLength)
+        ) {
+            commonPathLength++;
+        }
 
-        // Append the path from LCA to destination
-        directions.append(pathToDest);
+        // Add "U" for each step to go up from start to common ancestor
+        for (int i = 0; i < startPath.length() - commonPathLength; i++) {
+            directions.append("U");
+        }
+
+        // Add directions from common ancestor to destination
+        for (int i = commonPathLength; i < destPath.length(); i++) {
+            directions.append(destPath.charAt(i));
+        }
 
         return directions.toString();
     }
 
-    private TreeNode findLowestCommonAncestor(
-        TreeNode node,
-        int value1,
-        int value2
-    ) {
-        if (node == null) return null;
+    private boolean findPath(TreeNode node, int target, StringBuilder path) {
+        if (node == null) {
+            return false;
+        }
 
-        if (node.val == value1 || node.val == value2) return node;
-
-        TreeNode leftLCA = findLowestCommonAncestor(node.left, value1, value2);
-        TreeNode rightLCA = findLowestCommonAncestor(
-            node.right,
-            value1,
-            value2
-        );
-
-        if (leftLCA == null) return rightLCA;
-        else if (rightLCA == null) return leftLCA;
-        else return node; // Both values found, this is the LCA
-    }
-
-    private boolean findPath(
-        TreeNode node,
-        int targetValue,
-        StringBuilder path
-    ) {
-        if (node == null) return false;
-
-        if (node.val == targetValue) return true;
+        if (node.val == target) {
+            return true;
+        }
 
         // Try left subtree
         path.append("L");
-        if (findPath(node.left, targetValue, path)) {
+        if (findPath(node.left, target, path)) {
             return true;
         }
-        path.setLength(path.length() - 1); // Remove last character
+        path.deleteCharAt(path.length() - 1); // Remove last character
 
         // Try right subtree
         path.append("R");
-        if (findPath(node.right, targetValue, path)) {
+        if (findPath(node.right, target, path)) {
             return true;
         }
-        path.setLength(path.length() - 1); // Remove last character
+        path.deleteCharAt(path.length() - 1); // Remove last character
 
         return false;
     }
