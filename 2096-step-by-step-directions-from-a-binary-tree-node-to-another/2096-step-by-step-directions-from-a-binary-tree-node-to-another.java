@@ -15,42 +15,23 @@
  */
 class Solution {
 
-   static byte[] path = new byte[200_001];
-    int strtLevel = -1; 
-    int destLevel = -1;
-    int comnLevel = -1;
-    
-    public String getDirections(TreeNode root, int startValue, int destValue) {
-        findPaths(root, startValue, destValue, 100_000);
-        int answerIdx = comnLevel;
-        for (int i = strtLevel; i > comnLevel; i--)  
-            path[--answerIdx] = 'U';
-        return new String(path, answerIdx, destLevel - answerIdx);
+    private boolean find(TreeNode n, int val, StringBuilder sb) {
+        if (n.val == val)
+            return true;
+        if (n.left != null && find(n.left, val, sb))
+            sb.append("L");
+        else if (n.right != null && find(n.right, val, sb))
+            sb.append("R");
+        return sb.length() > 0;
     }
-    
-    private int findPaths(TreeNode node, int strtVal, int destVal, int level) {
-        if (node == null)  return 0;
-        int result = 0;
-        if (node.val == strtVal) {
-            strtLevel = level;
-            result = 1;
-        } else if (node.val == destVal) {
-            destLevel = level;
-            result = 1;
-        }
-        int leftFound = 0;
-        int rightFound = 0;
-        if (comnLevel < 0) {
-            if (destLevel < 0)  path[level] = 'L';
-            leftFound = findPaths(node.left, strtVal, destVal, level + 1);
-            rightFound = 0;
-            if (comnLevel < 0) {
-                if (destLevel < 0)  path[level] = 'R';
-                rightFound = findPaths(node.right, strtVal, destVal, level + 1);
-            }
-        }
-        if (comnLevel < 0 && leftFound + rightFound + result == 2) 
-            comnLevel = level;
-        return result | leftFound | rightFound;
+
+    public String getDirections(TreeNode root, int startValue, int destValue) {
+        StringBuilder s = new StringBuilder(), d = new StringBuilder();
+        find(root, startValue, s);
+        find(root, destValue, d);
+        int i = 0, max_i = Math.min(d.length(), s.length());
+        while (i < max_i && s.charAt(s.length() - i - 1) == d.charAt(d.length() - i - 1))
+            ++i;
+        return "U".repeat(s.length() - i) + d.reverse().toString().substring(i);
     }
 }
