@@ -15,63 +15,42 @@
  */
 class Solution {
 
+   static byte[] path = new byte[200_001];
+    int strtLevel = -1; 
+    int destLevel = -1;
+    int comnLevel = -1;
+    
     public String getDirections(TreeNode root, int startValue, int destValue) {
-        StringBuilder startPath = new StringBuilder();
-        StringBuilder destPath = new StringBuilder();
-
-        // Find paths from root to start and destination nodes
-        findPath(root, startValue, startPath);
-        findPath(root, destValue, destPath);
-
-        StringBuilder directions = new StringBuilder();
-        int commonPathLength = 0;
-
-        // Find the length of the common path
-        while (
-            commonPathLength < startPath.length() &&
-            commonPathLength < destPath.length() &&
-            startPath.charAt(commonPathLength) ==
-            destPath.charAt(commonPathLength)
-        ) {
-            commonPathLength++;
-        }
-
-        // Add "U" for each step to go up from start to common ancestor
-        for (int i = 0; i < startPath.length() - commonPathLength; i++) {
-            directions.append("U");
-        }
-
-        // Add directions from common ancestor to destination
-        for (int i = commonPathLength; i < destPath.length(); i++) {
-            directions.append(destPath.charAt(i));
-        }
-
-        return directions.toString();
+        findPaths(root, startValue, destValue, 100_000);
+        int answerIdx = comnLevel;
+        for (int i = strtLevel; i > comnLevel; i--)  
+            path[--answerIdx] = 'U';
+        return new String(path, answerIdx, destLevel - answerIdx);
     }
-
-    private boolean findPath(TreeNode node, int target, StringBuilder path) {
-        if (node == null) {
-            return false;
+    
+    private int findPaths(TreeNode node, int strtVal, int destVal, int level) {
+        if (node == null)  return 0;
+        int result = 0;
+        if (node.val == strtVal) {
+            strtLevel = level;
+            result = 1;
+        } else if (node.val == destVal) {
+            destLevel = level;
+            result = 1;
         }
-
-        if (node.val == target) {
-            return true;
+        int leftFound = 0;
+        int rightFound = 0;
+        if (comnLevel < 0) {
+            if (destLevel < 0)  path[level] = 'L';
+            leftFound = findPaths(node.left, strtVal, destVal, level + 1);
+            rightFound = 0;
+            if (comnLevel < 0) {
+                if (destLevel < 0)  path[level] = 'R';
+                rightFound = findPaths(node.right, strtVal, destVal, level + 1);
+            }
         }
-
-        // Try left subtree
-        path.append("L");
-        if (findPath(node.left, target, path)) {
-            return true;
-        }
-        path.deleteCharAt(path.length() - 1); // Remove last character
-
-        // Try right subtree
-        path.append("R");
-        if (findPath(node.right, target, path)) {
-            return true;
-        }
-        path.deleteCharAt(path.length() - 1); // Remove last character
-
-        return false;
+        if (comnLevel < 0 && leftFound + rightFound + result == 2) 
+            comnLevel = level;
+        return result | leftFound | rightFound;
     }
 }
