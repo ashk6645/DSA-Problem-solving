@@ -1,72 +1,79 @@
-import java.util.ArrayList;
-import java.util.List;
+class Solution 
+{
 
-class Solution {
+    // Define arrays to track used numbers
+    private boolean[][] rows = new boolean[9][9];
+    private boolean[][] cols = new boolean[9][9];
+    private boolean[][] boxes = new boolean[9][9];
 
-    private static final int SIZE = 9;
-    private static final int SUBGRID_SIZE = 3;
-
-    // Define bitmasks to track used numbers
-    private int[] rows = new int[SIZE];
-    private int[] cols = new int[SIZE];
-    private int[] boxes = new int[SIZE];
-    private List<int[]> emptyCells = new ArrayList<>();
-
-    public void solveSudoku(char[][] board) {
-        // Initialize the bitmasks and list of empty cells
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if (board[i][j] == '.') {
-                    emptyCells.add(new int[]{i, j});
-                } else {
+    public void solveSudoku(char[][] board) 
+    {
+        // Initialize the tracking arrays based on the initial board
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (board[i][j] != '.') {
                     int num = board[i][j] - '1';
-                    rows[i] |= 1 << num;
-                    cols[j] |= 1 << num;
-                    boxes[3 * (i / SUBGRID_SIZE) + j / SUBGRID_SIZE] |= 1 << num;
+                    rows[i][num] = true;
+                    cols[j][num] = true;
+                    boxes[3 * (i / 3) + j / 3][num] = true;
                 }
             }
         }
-        // Start solving from the first empty cell
-        solve(board, 0);
+        // Start solving from the first cell
+        solve(board, 0, 0);
     }
 
-    private boolean solve(char[][] board, int index) {
-        // Base case: If all empty cells are filled, the solution is found
-        if (index == emptyCells.size()) {
+    private boolean solve(char[][] board, int row, int col)
+    {
+        // Base case: If row is equal to board length, entire board has been filled
+        if (row == 9) 
+        {
             return true;
         }
 
-        int[] cell = emptyCells.get(index);
-        int row = cell[0];
-        int col = cell[1];
-        int boxIndex = 3 * (row / SUBGRID_SIZE) + col / SUBGRID_SIZE;
+        // Move to next row when current row is fully filled
+        if (col == 9)
+        {
+            return solve(board, row + 1, 0);
+        }
 
-        // Try different numbers in the current cell
-        for (int num = 0; num < SIZE; num++) {
-            if ((rows[row] & (1 << num)) == 0 &&
-                (cols[col] & (1 << num)) == 0 &&
-                (boxes[boxIndex] & (1 << num)) == 0) {
+        // Skip cells that are already filled
+        if (board[row][col] != '.')
+        {
+            return solve(board, row, col + 1);
+        }
 
-                // Place the number and update the bitmasks
-                board[row][col] = (char) (num + '1');
-                rows[row] |= 1 << num;
-                cols[col] |= 1 << num;
-                boxes[boxIndex] |= 1 << num;
+        // Try different numbers in current cell
+        for (int num = 0; num < 9; num++)
+        {
+            if (isValidPlacement(row, col, num)) 
+            {
+                board[row][col] = (char) (num + '1'); // Fill current cell with valid number
+                rows[row][num] = true;
+                cols[col][num] = true;
+                boxes[3 * (row / 3) + col / 3][num] = true;
 
-                // Move to the next empty cell
-                if (solve(board, index + 1)) {
+                // Move to next cell
+                if (solve(board, row, col + 1)) 
+                {
                     return true;
                 }
 
-                // Backtrack to the previous state
+                // Backtrack to previous state if solution not found
                 board[row][col] = '.';
-                rows[row] &= ~(1 << num);
-                cols[col] &= ~(1 << num);
-                boxes[boxIndex] &= ~(1 << num);
+                rows[row][num] = false;
+                cols[col][num] = false;
+                boxes[3 * (row / 3) + col / 3][num] = false;
             }
         }
 
         // No valid solution found
         return false;
+    }
+
+    private boolean isValidPlacement(int row, int col, int num)
+    {
+        // Check if num is already used in the same row, column, or 3x3 subgrid
+        return !rows[row][num] && !cols[col][num] && !boxes[3 * (row / 3) + col / 3][num];
     }
 }
