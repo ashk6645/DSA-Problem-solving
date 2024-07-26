@@ -2,40 +2,33 @@ class Solution
 {
     public boolean wordPattern(String pattern, String s) 
     {
+        
         String[] words = s.split(" ");
 
-        if (pattern.length() != words.length) 
-        {
-            return false;
+        if(pattern.length() != words.length){
+            return false; 
         }
 
-        HashMap<Character, String> patternToWord = new HashMap<>();
-        HashMap<String, Character> wordToPattern = new HashMap<>();
-
-        for (int i = 0; i < pattern.length(); i++)
-        {
+        HashMap<Character, String> map = new HashMap<>();
+        for(int i=0; i<pattern.length(); i++){
             char key = pattern.charAt(i);
             String value = words[i];
-
-            if (patternToWord.containsKey(key))
-            {
-                if (!patternToWord.get(key).equals(value)) 
-                {
-                    return false;
+            if(map.containsKey(key)){
+                if(!map.get(key).equals(value)){
+                    return false; 
                 }
             }
-            else
-            {
-                if (wordToPattern.containsKey(value))
-                {
+            else{
+                if(map.containsValue(value)){
                     return false;
                 }
-                patternToWord.put(key, value);
-                wordToPattern.put(value, key);
+                else{
+                    map.put(key, value);
+                }
             }
         }
 
-        return true;
+        return true; 
         
     }
 }
