@@ -1,58 +1,38 @@
 class Solution
 {
-    static class Node 
-    {
-        int vertex;
-        double probability;
-        
-        Node(int vertex, double probability)
-        {
-            this.vertex = vertex;
-            this.probability = probability;
-        }
-    }
+    
     public double maxProbability(int n, int[][] edges, double[] succProb, int start_node, int end_node)
     {
-        List<List<Node>> graph = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            graph.add(new ArrayList<>());
-        }
-        
-        for (int i = 0; i < edges.length; i++) {
-            int u = edges[i][0];
-            int v = edges[i][1];
-            double prob = succProb[i];
-            graph.get(u).add(new Node(v, prob));
-            graph.get(v).add(new Node(u, prob));
-        }
-        
-        // Use a priority queue to store the maximum probability path
-        PriorityQueue<Node> pq = new PriorityQueue<>((a, b) -> Double.compare(b.probability, a.probability));
-        double[] dist = new double[n];
+       double[] dist = new double[n];
+        Arrays.fill(dist, 0.0);
         dist[start_node] = 1.0;
-        pq.add(new Node(start_node, 1.0));
         
-        while (!pq.isEmpty()) {
-            Node current = pq.poll();
-            int u = current.vertex;
-            double prob = current.probability;
-            
-            if (u == end_node) {
-                return prob;
-            }
-            
-            for (Node neighbor : graph.get(u)) {
-                int v = neighbor.vertex;
-                double edgeProb = neighbor.probability;
+        // Perform Bellman-Ford relaxation up to (n-1) times
+        for (int i = 0; i < n - 1; i++) {
+            boolean updated = false;
+            for (int j = 0; j < edges.length; j++) {
+                int u = edges[j][0];
+                int v = edges[j][1];
+                double prob = succProb[j];
                 
-                if (dist[u] * edgeProb > dist[v]) {
-                    dist[v] = dist[u] * edgeProb;
-                    pq.add(new Node(v, dist[v]));
+                // Relaxation for edge u -> v
+                if (dist[u] * prob > dist[v]) {
+                    dist[v] = dist[u] * prob;
+                    updated = true;
+                }
+                
+                // Relaxation for edge v -> u (because the graph is undirected)
+                if (dist[v] * prob > dist[u]) {
+                    dist[u] = dist[v] * prob;
+                    updated = true;
                 }
             }
+            // Early termination if no update was made
+            if (!updated) break;
         }
         
-        return 0.0;
+        // Return the maximum probability to reach the end node
+        return dist[end_node];
         
     }
 }
