@@ -1,34 +1,31 @@
 class Solution {
     public int maxMoves(int[][] grid) {
-        int M = grid.length, N = grid[0].length;
-        int[][] dp = new int[M][2];
-        for (int i = 0; i < M; i++) {
-            dp[i][0] = 1;
-        }
-
-        int maxMoves = 0;
-
-        for (int j = 1; j < N; j++) {
-            for (int i = 0; i < M; i++) {
-               
-                if (grid[i][j] > grid[i][j - 1] && dp[i][0] > 0) {
-                    dp[i][1] = Math.max(dp[i][1], dp[i][0] + 1);
+        int m = grid.length;
+        int n = grid[0].length;
+        boolean[] current = new boolean[m];
+        Arrays.fill(current, true);  
+        int moves = 0;
+        
+        for (int j = 1; j < n && moves + 1 < n; j++) {
+            boolean[] next = new boolean[m];
+            boolean anyValid = false; 
+            
+            for (int i = 0; i < m; i++) {
+                if (!current[i]) continue;  
+                for (int k = Math.max(0, i - 1); k <= Math.min(m - 1, i + 1); k++) {
+                    if (grid[k][j] > grid[i][j - 1]) {
+                        next[k] = true;
+                        anyValid = true;
+                    }
                 }
-             
-                if (i - 1 >= 0 && grid[i][j] > grid[i - 1][j - 1] && dp[i - 1][0] > 0) {
-                    dp[i][1] = Math.max(dp[i][1], dp[i - 1][0] + 1);
-                }
-              
-                if (i + 1 < M && grid[i][j] > grid[i + 1][j - 1] && dp[i + 1][0] > 0) {
-                    dp[i][1] = Math.max(dp[i][1], dp[i + 1][0] + 1);
-                }
-                maxMoves = Math.max(maxMoves, dp[i][1] - 1);
             }
-            for (int k = 0; k < M; k++) {
-                dp[k][0] = dp[k][1];
-                dp[k][1] = 0;
-            }
+            
+            if (!anyValid) break;
+            
+            moves++;
+            current = next;
         }
-        return maxMoves;
+        
+        return moves;
     }
 }
