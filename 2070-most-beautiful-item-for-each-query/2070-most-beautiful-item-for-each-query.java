@@ -1,30 +1,28 @@
 class Solution {
     public int[] maximumBeauty(int[][] items, int[] queries) {
-        int[] ans = new int[queries.length];
-
-        Arrays.sort(items, (a, b) -> a[0] - b[0]);
-        int[][] queriesWithIndices = new int[queries.length][2];
-        for (int i = 0; i < queries.length; i++) {
-            queriesWithIndices[i][0] = queries[i];
-            queriesWithIndices[i][1] = i;
+        // Pre-process to remove items with lower price but lower or equal beauty
+        TreeMap<Integer, Integer> priceToMaxBeauty = new TreeMap<>();
+        for (int[] item : items) {
+            priceToMaxBeauty.put(item[0], Math.max(
+                priceToMaxBeauty.getOrDefault(item[0], 0), 
+                item[1]
+            ));
         }
-        Arrays.sort(queriesWithIndices, (a, b) -> a[0] - b[0]);
-        int itemIndex = 0;
-        int maxBeauty = 0;
-
-        for (int i = 0; i < queries.length; i++) {
-            int query = queriesWithIndices[i][0];
-            int originalIndex = queriesWithIndices[i][1];
-
-            while (itemIndex < items.length && items[itemIndex][0] <= query) {
-                maxBeauty = Math.max(maxBeauty, items[itemIndex][1]);
-                itemIndex++;
-            }
-
-            ans[originalIndex] = maxBeauty;
-        }
-
-        return ans;
         
+        // Build running maximum beauty for each price point
+        int maxSoFar = 0;
+        for (Map.Entry<Integer, Integer> entry : priceToMaxBeauty.entrySet()) {
+            maxSoFar = Math.max(maxSoFar, entry.getValue());
+            priceToMaxBeauty.put(entry.getKey(), maxSoFar);
+        }
+        
+        // Process queries
+        int[] result = new int[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            Map.Entry<Integer, Integer> entry = priceToMaxBeauty.floorEntry(queries[i]);
+            result[i] = entry == null ? 0 : entry.getValue();
+        }
+        
+        return result;
     }
 }
