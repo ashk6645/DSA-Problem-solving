@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0011-container-with-most-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0011-container-with-most-water) |
 | [0042-trapping-rain-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0042-trapping-rain-water) |
 | [0689-maximum-sum-of-3-non-overlapping-subarrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0689-maximum-sum-of-3-non-overlapping-subarrays) |
+| [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -29,4 +30,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0011-container-with-most-water) |
+## Hash Table
+|  |
+| ------- |
+| [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
+## Bit Manipulation
+|  |
+| ------- |
+| [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 <!---LeetCode Topics End-->
