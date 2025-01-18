@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0011-container-with-most-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0011-container-with-most-water) |
 | [0042-trapping-rain-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0042-trapping-rain-water) |
 | [0689-maximum-sum-of-3-non-overlapping-subarrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0689-maximum-sum-of-3-non-overlapping-subarrays) |
+| [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
 | [2533-bitwise-xor-of-all-pairings](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2533-bitwise-xor-of-all-pairings) |
 | [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 | [2792-neighboring-bitwise-xor](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2792-neighboring-bitwise-xor) |
@@ -48,4 +49,24 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2533-bitwise-xor-of-all-pairings](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2533-bitwise-xor-of-all-pairings) |
+## Breadth-First Search
+|  |
+| ------- |
+| [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+## Graph
+|  |
+| ------- |
+| [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+## Matrix
+|  |
+| ------- |
+| [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+## Shortest Path
+|  |
+| ------- |
+| [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
 <!---LeetCode Topics End-->
