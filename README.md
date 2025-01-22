@@ -9,6 +9,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0407-trapping-rain-water-ii](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0407-trapping-rain-water-ii) |
 | [0689-maximum-sum-of-3-non-overlapping-subarrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0689-maximum-sum-of-3-non-overlapping-subarrays) |
 | [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+| [1876-map-of-highest-peak](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1876-map-of-highest-peak) |
 | [2145-grid-game](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2145-grid-game) |
 | [2533-bitwise-xor-of-all-pairings](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2533-bitwise-xor-of-all-pairings) |
 | [2685-first-completely-painted-row-or-column](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2685-first-completely-painted-row-or-column) |
@@ -58,6 +59,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0407-trapping-rain-water-ii](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0407-trapping-rain-water-ii) |
 | [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+| [1876-map-of-highest-peak](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1876-map-of-highest-peak) |
 ## Graph
 |  |
 | ------- |
@@ -72,6 +74,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0407-trapping-rain-water-ii](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0407-trapping-rain-water-ii) |
 | [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
+| [1876-map-of-highest-peak](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1876-map-of-highest-peak) |
 | [2145-grid-game](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2145-grid-game) |
 | [2685-first-completely-painted-row-or-column](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2685-first-completely-painted-row-or-column) |
 ## Shortest Path
