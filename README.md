@@ -42,6 +42,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 |  |
 | ------- |
+| [0242-valid-anagram](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0242-valid-anagram) |
 | [2685-first-completely-painted-row-or-column](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2685-first-completely-painted-row-or-column) |
 | [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 ## Bit Manipulation
@@ -107,4 +108,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0820-find-eventual-safe-states](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0820-find-eventual-safe-states) |
+## String
+|  |
+| ------- |
+| [0242-valid-anagram](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0242-valid-anagram) |
+## Sorting
+|  |
+| ------- |
+| [0242-valid-anagram](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0242-valid-anagram) |
 <!---LeetCode Topics End-->
