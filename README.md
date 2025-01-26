@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid) |
 | [1876-map-of-highest-peak](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1876-map-of-highest-peak) |
 | [2145-grid-game](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2145-grid-game) |
+| [2195-time-needed-to-buy-tickets](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2195-time-needed-to-buy-tickets) |
 | [2533-bitwise-xor-of-all-pairings](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2533-bitwise-xor-of-all-pairings) |
 | [2685-first-completely-painted-row-or-column](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2685-first-completely-painted-row-or-column) |
 | [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
@@ -119,4 +120,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0242-valid-anagram](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0242-valid-anagram) |
 | [3219-make-lexicographically-smallest-array-by-swapping-elements](https://github.com/ashk6645/DSA-Problem-solving/tree/master/3219-make-lexicographically-smallest-array-by-swapping-elements) |
+## Queue
+|  |
+| ------- |
+| [2195-time-needed-to-buy-tickets](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2195-time-needed-to-buy-tickets) |
+## Simulation
+|  |
+| ------- |
+| [2195-time-needed-to-buy-tickets](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2195-time-needed-to-buy-tickets) |
 <!---LeetCode Topics End-->
