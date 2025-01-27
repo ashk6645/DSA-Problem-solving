@@ -64,6 +64,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Breadth-First Search
 |  |
 | ------- |
+| [0226-invert-binary-tree](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0226-invert-binary-tree) |
 | [0407-trapping-rain-water-ii](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0407-trapping-rain-water-ii) |
 | [0820-find-eventual-safe-states](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0820-find-eventual-safe-states) |
 | [1396-count-servers-that-communicate](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1396-count-servers-that-communicate) |
@@ -99,6 +100,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Depth-First Search
 |  |
 | ------- |
+| [0226-invert-binary-tree](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0226-invert-binary-tree) |
 | [0820-find-eventual-safe-states](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0820-find-eventual-safe-states) |
 | [1396-count-servers-that-communicate](https://github.com/ashk6645/DSA-Problem-solving/tree/master/1396-count-servers-that-communicate) |
 ## Union Find
@@ -131,4 +133,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2195-time-needed-to-buy-tickets](https://github.com/ashk6645/DSA-Problem-solving/tree/master/2195-time-needed-to-buy-tickets) |
+## Tree
+|  |
+| ------- |
+| [0226-invert-binary-tree](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0226-invert-binary-tree) |
+## Binary Tree
+|  |
+| ------- |
+| [0226-invert-binary-tree](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0226-invert-binary-tree) |
 <!---LeetCode Topics End-->
