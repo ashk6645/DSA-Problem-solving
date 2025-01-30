@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0011-container-with-most-water) |
+| [0015-3sum](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0042-trapping-rain-water) |
 | [0407-trapping-rain-water-ii](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0407-trapping-rain-water-ii) |
 | [0689-maximum-sum-of-3-non-overlapping-subarrays](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0689-maximum-sum-of-3-non-overlapping-subarrays) |
@@ -29,6 +30,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0011-container-with-most-water) |
+| [0015-3sum](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0042-trapping-rain-water) |
 | [0344-reverse-string](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0344-reverse-string) |
 ## Stack
@@ -126,6 +128,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Sorting
 |  |
 | ------- |
+| [0015-3sum](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0015-3sum) |
 | [0242-valid-anagram](https://github.com/ashk6645/DSA-Problem-solving/tree/master/0242-valid-anagram) |
 | [3219-make-lexicographically-smallest-array-by-swapping-elements](https://github.com/ashk6645/DSA-Problem-solving/tree/master/3219-make-lexicographically-smallest-array-by-swapping-elements) |
 ## Queue
